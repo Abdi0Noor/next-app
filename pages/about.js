@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import Header from '../components/shared/header';
+import BaseLayout from '../components/layouts/BaseLayout';
 class About extends Component {
     render() {
         return (
-            <dv>This is the About Page</dv>
+            <BaseLayout>
+            <h1>This is the About Page</h1>
+            </BaseLayout>
+            
         )
     }
 }
