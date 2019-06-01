@@ -1,23 +1,59 @@
 import React from 'react';
-import axios from 'axios';
+import { Button, Container, Row, Col} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import BaseLayout from '../components/layouts/BaseLayout';
-export default class Index extends React.Component {
-    // static getInitialProps() {
-    //     axios.get('https://jsonplaceholder.typicode.com/todos/1')
-    //     .then(
-    //         (data) => console.log(data))
-    //     .catch(err => console.error(err))
-    //     return {initialData: [1,2,3,4]};
-    //     }
+ class Index extends React.Component {
+  
     
     render() {
         return (
-            <BaseLayout>
-                <h1> This is the index page</h1>
-                <h2>This is the header subtitle</h2>
+        <BaseLayout className="cover">
+                <div className="main-section">
+                    <div className="background-image">
+                    <img src="static/images/background-index.png" />
+                    </div>
 
-            </BaseLayout>
+                    <Container>
+                    <Row>
+                        <Col md="6">
+                        <div className="hero-section">
+                            <div className={`flipper`}>
+                            <div className="back">
+                                <div className="hero-section-content">
+                                <h2> Full Stack Web Developer </h2>
+                                <div className="hero-section-content-intro">
+                                    Have a look at my portfolio and job history.
+                                </div>
+                                </div>
+                                <img className="image" src="/static/images/section-1.png"/>
+                                <div className="shadow-custom">
+                                <div className="shadow-inner"> </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </Col>
+                        <Col md="6" className="hero-welcome-wrapper">
+                        <div className="hero-welcome-text">
+                            <h1>
+
+                            Hello this is Abdi, and welcome to my portfolio Website.
+                            Check out Some of the work I have Completed as a Developer.
+                            </h1>
+                        </div>
+                        <div className="hero-welcome-bio">
+                            <h1>
+                            Let's take a look at my Work
+                            </h1>
+                        </div>
+                        </Col>
+                    </Row>
+                    </Container>
+                </div>
+                </BaseLayout>
             
         )
     }
 }
+export default Index;
