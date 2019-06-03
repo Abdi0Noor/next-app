@@ -1,6 +1,6 @@
-@import './shared/fonts';
-
-@import './index';
+@import './shared/_fonts';
+@import './_header.scss';
+@import './_index';
 
 html, body {
     height:100%;
@@ -8,3 +8,17 @@ html, body {
     font-family: 'Roboto', sans-serif;
   }
   
+.self-typed {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.base-page {
+  padding-top: 150px;
+  color: white;
+}

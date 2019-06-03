@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'next/router';
 import axios from 'axios';
 import BaseLayout from '../components/layouts/BaseLayout';
-
+import BasePage from '../components/layouts/BasePage';
 class Portfolio extends Component {
     static async getInitialProps({query}) {
         const portfolioId = query.id;
@@ -22,10 +22,11 @@ class Portfolio extends Component {
         
         return (
             <BaseLayout>
+            <BasePage>
                 <h1>{portfolio.title}</h1>
                 <p>{portfolio.body}</p>
                 <p>{portfolio.id}</p>
-
+            </BasePage>
             </BaseLayout>
           
 

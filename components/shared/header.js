@@ -1,24 +1,65 @@
 import React from 'react';
 import Link from 'next/link';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink } from 'reactstrap';
 
-export default class Header extends React.Component {
+  const BtNavLink = (props) => {
+      const {route , title} = props;
 
-    render() {
-       
-        return (
-            <React.Fragment>
-                      
-            <Link href="/"><a>home</a></Link>
-            <Link href="/blogs"><a>blogs</a></Link>
-            <Link href="/about"><a>about</a></Link>
-            <Link href="/resume"><a>resume</a></Link>
-            <Link href="/portfolios"><a>portfolios</a></Link>
-            <style jsx>
-            {` a { font-size: 20px} `}
-            </style>
-            </React.Fragment>
-            
-        )
-    }
+      return (
+        <Link href={route}>
+            <a className="nav-link port-navbar-link">{title}</a>
+        </Link>
+      )
+  }
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Navbar className="port-navbar port-default absolute" color="transparent" dark expand="md">
+          <NavbarBrand className="port-navbar-brand"href="/">Abdi Noor</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem className="port-navbar-item">
+                <BtNavLink route="/" title="Home" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BtNavLink route="/about" title="About" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BtNavLink route="/portfolios" title="portfolios" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BtNavLink route="/blogs" title="blogs" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BtNavLink route="/resume" title="resume" />
+              </NavItem>
+              
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
-

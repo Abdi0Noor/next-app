@@ -29,6 +29,30 @@
   font-weight: normal;
   font-style: italic; }
 
+.port-navbar.port-default {
+  width: 100%;
+  z-index: 15;
+  padding: 40px; }
+  .port-navbar.port-default .port-navbar-brand {
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold; }
+  .port-navbar.port-default .port-navbar-item {
+    margin-left: 10px;
+    margin-right: 10px; }
+  .port-navbar.port-default .port-navbar-link {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    font-size: 18px;
+    text-transform: uppercase; }
+    .port-navbar.port-default .port-navbar-link.active {
+      color: #dba919; }
+    .port-navbar.port-default .port-navbar-link:hover, .port-navbar.port-default .port-navbar-link:focus {
+      color: #dba919; }
+
 .cover {
   background-image: linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
   overflow: hidden;
@@ -117,6 +141,18 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Roboto', sans-serif; }
+
+.self-typed {
+  font-size: 30px;
+  font-weight: bold;
+  color: white; }
+
+.absolute {
+  position: absolute; }
+
+.base-page {
+  padding-top: 150px;
+  color: white; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/

@@ -1,10 +1,14 @@
 import React from 'react';
 import { Button, Container, Row, Col} from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Typed from 'react-typed';
+
 
 import BaseLayout from '../components/layouts/BaseLayout';
  class Index extends React.Component {
-  
+    constructor(props) {
+        super(props);
+        this.selfTyped = ["Preparing Pizza time", "Charging up ultimate", "This is a test", "This is another Test"]
+    }
     
     render() {
         return (
@@ -42,6 +46,23 @@ import BaseLayout from '../components/layouts/BaseLayout';
                             Check out Some of the work I have Completed as a Developer.
                             </h1>
                         </div>
+                        <Typed
+                        className="self-typed"
+                        loop
+                        typeSpeed={60}
+                        backSpeed={30}
+                        strings={this.selfTyped}
+                        smartBackspace
+                        shuffle={false}
+                        backDelay={1000}
+                        fadeOut={false}
+                        fadeOutDelay={100}
+                        loopCount={0}
+                        showCursor
+                        cursorChar="|"
+                        />
+
+
                         <div className="hero-welcome-bio">
                             <h1>
                             Let's take a look at my Work
