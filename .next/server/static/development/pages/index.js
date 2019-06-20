@@ -133,13 +133,14 @@ var BaseLayout = function BaseLayout(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Example; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "next/link");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! reactstrap */ "reactstrap");
-/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_auth0__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/auth0 */ "./services/auth0.js");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! reactstrap */ "reactstrap");
+/* harmony import */ var reactstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(reactstrap__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -162,6 +163,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var BtNavLink = function BtNavLink(props) {
   var route = props.route,
       title = props.title;
@@ -172,17 +174,31 @@ var BtNavLink = function BtNavLink(props) {
   }, title));
 };
 
-var Example =
+var Login = function Login() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_2__["default"].login,
+    className: "nav-link port-navbar-link clickable"
+  }, " Login");
+};
+
+var Logout = function Logout() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    onClick: _services_auth0__WEBPACK_IMPORTED_MODULE_2__["default"].logout,
+    className: "nav-link port-navbar-link clickable"
+  }, " Logout");
+};
+
+var Header =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Example, _React$Component);
+  _inherits(Header, _React$Component);
 
-  function Example(props) {
+  function Header(props) {
     var _this;
 
-    _classCallCheck(this, Example);
+    _classCallCheck(this, Header);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Example).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
     _this.toggle = _this.toggle.bind(_assertThisInitialized(_this));
     _this.state = {
       isOpen: false
@@ -190,7 +206,7 @@ function (_React$Component) {
     return _this;
   }
 
-  _createClass(Example, [{
+  _createClass(Header, [{
     key: "toggle",
     value: function toggle() {
       this.setState({
@@ -200,52 +216,56 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Navbar"], {
         className: "port-navbar port-default absolute",
         color: "transparent",
         dark: true,
         expand: "md"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarBrand"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavbarBrand"], {
         className: "port-navbar-brand",
         href: "/"
-      }, "Abdi Noor"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavbarToggler"], {
+      }, "Abdi Noor"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavbarToggler"], {
         onClick: this.toggle
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Collapse"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Collapse"], {
         isOpen: this.state.isOpen,
         navbar: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["Nav"], {
         className: "ml-auto",
         navbar: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtNavLink, {
         route: "/",
         title: "Home"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtNavLink, {
         route: "/about",
         title: "About"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtNavLink, {
         route: "/portfolios",
         title: "portfolios"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtNavLink, {
         route: "/blogs",
         title: "blogs"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
         className: "port-navbar-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BtNavLink, {
         route: "/resume",
         title: "resume"
-      }))))));
+      })), !_services_auth0__WEBPACK_IMPORTED_MODULE_2__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+        className: "port-navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Login, null)), _services_auth0__WEBPACK_IMPORTED_MODULE_2__["default"].isAuthenticated() && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactstrap__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+        className: "port-navbar-item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Logout, null))))));
     }
   }]);
 
-  return Example;
+  return Header;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 
@@ -302,7 +322,7 @@ function (_React$Component) {
     _classCallCheck(this, Index);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
-    _this.selfTyped = ["Preparing Pizza time", "Charging up ultimate", "This is a test", "This is another Test"];
+    _this.selfTyped = ["War...War never changes", "I need healing", "the cake is a lie", "Just me and the boys"];
     return _this;
   }
 
@@ -341,7 +361,7 @@ function (_React$Component) {
         className: "hero-welcome-wrapper"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "hero-welcome-text"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello this is Abdi, and welcome to my portfolio Website. Check out Some of the work I have Completed as a Developer.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello this is Abdi, and welcome to my portfolio Website. Check out Some of my work.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_typed__WEBPACK_IMPORTED_MODULE_2___default.a, {
         className: "self-typed",
         loop: true,
         typeSpeed: 60,
@@ -368,6 +388,108 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./services/auth0.js":
+/*!***************************!*\
+  !*** ./services/auth0.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! auth0-js */ "auth0-js");
+/* harmony import */ var auth0_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(auth0_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js-cookie */ "js-cookie");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_1__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var Auth0 =
+/*#__PURE__*/
+function () {
+  function Auth0() {
+    _classCallCheck(this, Auth0);
+
+    this.auth0 = new auth0_js__WEBPACK_IMPORTED_MODULE_0___default.a.WebAuth({
+      domain: 'dev-iy0gmg-9.auth0.com',
+      clientID: '1sMRLEXYTU40Cz9gAKAL5fpzlcszD0cA',
+      redirectUri: 'http://localhost:3000/callback',
+      responseType: 'token id_token',
+      scope: 'openid profile'
+    });
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
+    this.handleAuthentication = this.handleAuthentication.bind(this);
+    this.isAuthenticated = this.isAuthenticated.bind(this);
+  }
+
+  _createClass(Auth0, [{
+    key: "handleAuthentication",
+    value: function handleAuthentication() {
+      var _this = this;
+
+      return new Promise(function (resolve, reject) {
+        _this.auth0.parseHash(function (err, authResult) {
+          if (authResult && authResult.accessToken && authResult.idToken) {
+            _this.setSession(authResult);
+
+            resolve();
+          } else if (err) {
+            reject();
+            console.log(err);
+          }
+        });
+      });
+    }
+  }, {
+    key: "setSession",
+    value: function setSession(authResult) {
+      // Set the time that the Access Token will expire at
+      var expiresAt = authResult.expiresIn * 1000 + new Date().getTime();
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('user', authResult.idTokenPayload);
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('jwt', authResult.idToken);
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.set('expiresAt', expiresAt); // navigate to the home route
+    }
+  }, {
+    key: "logout",
+    value: function logout() {
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.remove('user');
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.remove('jwt');
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.remove('expiresAt');
+      this.auth0.logout({
+        returnTo: '',
+        clientID: '1sMRLEXYTU40Cz9gAKAL5fpzlcszD0cA'
+      });
+    }
+  }, {
+    key: "login",
+    value: function login() {
+      this.auth0.authorize();
+    }
+  }, {
+    key: "isAuthenticated",
+    value: function isAuthenticated() {
+      // Check whether the current time is past the
+      // access token's expiry time
+      var expiresAt = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON('expiresAt');
+      return new Date().getTime() < expiresAt;
+    }
+  }]);
+
+  return Auth0;
+}();
+
+var auth0Client = new Auth0();
+/* harmony default export */ __webpack_exports__["default"] = (auth0Client);
+
+/***/ }),
+
 /***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
@@ -377,6 +499,28 @@ function (_React$Component) {
 
 module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "auth0-js":
+/*!***************************!*\
+  !*** external "auth0-js" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("auth0-js");
+
+/***/ }),
+
+/***/ "js-cookie":
+/*!****************************!*\
+  !*** external "js-cookie" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("js-cookie");
 
 /***/ }),
 

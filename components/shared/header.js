@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import auth0 from '../../services/auth0';
 import {
   Collapse,
   Navbar,
@@ -18,7 +19,17 @@ import {
         </Link>
       )
   }
-export default class Example extends React.Component {
+  const Login = () => {
+    return (
+      <span onClick={auth0.login} className="nav-link port-navbar-link clickable"> Login</span>
+    )
+  }
+  const Logout = () => {
+    return (
+      <span onClick={auth0.logout}className="nav-link port-navbar-link clickable"> Logout</span>
+    )
+  }
+export default class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -55,7 +66,16 @@ export default class Example extends React.Component {
               <NavItem className="port-navbar-item">
                 <BtNavLink route="/resume" title="resume" />
               </NavItem>
-              
+              { !auth0.isAuthenticated() &&
+              <NavItem className="port-navbar-item">
+                <Login />
+              </NavItem>
+              }
+              { auth0.isAuthenticated() &&
+              <NavItem className="port-navbar-item">
+                <Logout />
+              </NavItem>
+              }
             </Nav>
           </Collapse>
         </Navbar>

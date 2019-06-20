@@ -142,6 +142,9 @@ html, body {
   width: 100%;
   font-family: 'Roboto', sans-serif; }
 
+.clickable {
+  cursor: pointer; }
+
 .self-typed {
   font-size: 30px;
   font-weight: bold;

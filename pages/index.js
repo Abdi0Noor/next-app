@@ -7,7 +7,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
  class Index extends React.Component {
     constructor(props) {
         super(props);
-        this.selfTyped = ["Preparing Pizza time", "Charging up ultimate", "This is a test", "This is another Test"]
+        this.selfTyped = ["War...War never changes", "I need healing", "the cake is a lie", "Just me and the boys"]
     }
     
     render() {
@@ -43,7 +43,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
                             <h1>
 
                             Hello this is Abdi, and welcome to my portfolio Website.
-                            Check out Some of the work I have Completed as a Developer.
+                            Check out Some of my work.
                             </h1>
                         </div>
                         <Typed
